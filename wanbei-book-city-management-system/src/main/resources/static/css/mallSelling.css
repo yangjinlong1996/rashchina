@@ -1,0 +1,324 @@
+#d1{
+    z-index: 1;
+    width:100%;
+    margin:20px 0 0 200px;
+    position: relative;
+    overflow: hidden;
+    height:200px;
+}
+#d1 ul{
+    margin: 0;
+    padding: 0;
+}
+#d1 ul li{
+    float: left;
+}
+li{
+    list-style: none;
+    background-color: white;
+    width: 160px;
+    height: 34px;
+    text-align: center;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+ul li a{
+    line-height: 34px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding:0 10px;
+}
+/*二级菜单*/
+#d1 ul li ul {
+    display: none;
+    position:absolute;
+    top:34px;
+}
+#d1 ul li ul li a{
+    background-color: rgba(128,0,128,0.7);
+    color: white;
+    font-size: 15px;
+}
+.c1{
+    background-color: deepskyblue;
+    border-radius: 3px;
+}
+.c2:hover{
+    background-color: deepskyblue;
+    border-radius: 3px;
+}
+.c2 a:hover{
+    color:white;
+}
+#d1s1{
+    color:blue;
+    font-size: 12px;
+    line-height: 40px;
+    margin-left: 75px;
+}
+#d1s2{
+    color:red;
+    font-size: 10px;
+    line-height: 40px;
+}
+.container {
+    position: absolute;
+    top: 76px;
+    left: 1px;
+    width: 1520px;
+    height: 620px;
+}
+/*使用绝对定位，使全部图片叠加到一块*/
+.box, .box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.box img{
+    width:1520px;
+    height:620px;
+}
+/*下面小圆点，使用绝对定位，位于图片的正下方*/
+.circle {
+    width: 200px;
+    height: 14px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    margin-left: -100px;
+    text-align: center;
+    cursor: pointer;
+}
+/*每个小圆点的样式*/
+.circle b {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 3px;
+}
+/*小圆点的当前样式，也是鼠标移上去的样式*/
+.circle .current {
+    background-color: #fff;
+}
+/*左右两侧的按钮，采用绝对定位*/
+.btn {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 50px;
+    margin-top: -25px;
+    background-color: rgba(255, 255, 255, .7);
+    text-align: center;
+    line-height: 50px;
+    font-size: 50px;
+    cursor: pointer;
+}
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
+}
+#d2{
+    width:100%;
+    position: relative;
+    height:150px;
+    border-bottom:1px dashed black;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin-top:476px;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: "微软雅黑";
+}
+#d2 p{
+    line-height: 150px;
+    font-weight: bold;
+    font-size: 25px;
+}
+#d3{
+    width:100%;
+    height: 650px;
+    margin-top: 50px;
+    position: relative;
+}
+#d3d1{
+    width:500px;
+    height:650px;
+    float: left;
+    margin-left: 50px;
+    background-image: url("../imgs/mallSelling.jpg");
+    background-size: cover;
+}
+#d3d2{
+    width:800px;
+    height:650px;
+    float: left;
+    margin-left: 50px;
+}
+#d3d2p1{
+    margin-top:20px;
+    font-size: 18px;
+    font-family: Arial;
+    color: #666;
+    font-weight: bold;
+}
+#d3d2p2{
+    color: #e3393c;
+    font-size: 14px;
+    font-family: arial,"microsoft yahei";
+}
+#d3d2d1{
+    background-color: #f3f3f3;
+    width: 750px;
+    height:400px;
+    position: relative;
+}
+#d3d2d1-price{
+    padding-top: 10px;
+    overflow: hidden;/* div内都是浮动定位,因此要这样排版*/
+}
+#d3d2d1d1{
+    float: left;
+    width: 72px;
+    font-family:simsun;
+    margin-top: 12px;
+}
+#d3d2d1d2{
+    float: left;
+    height:35px;
+    line-height: 35px;
+    color: red;
+    font-size: 30px;
+}
+#d3d2d1d3{
+    float: left;
+    text-decoration: line-through;
+    color:#999;
+    line-height: 40px;
+    margin-left: 20px;
+}
+#d3d2d1-promotion{
+    overflow: hidden;
+    height: 90px;
+}
+#d3d2d1d4{
+    float: left;
+    width: 72px;
+    font-family:simsun;
+    margin-top: 12px;
+    float: left;
+}
+#d3d2d1d5{
+    float: left;
+}
+#d3d2d1d6{
+    margin: 40px 200px 50px 71px;
+}
+.em{
+    color: #df3033;
+    background: 0 0;
+    border: 1px solid #df3033;
+    padding: 2px 3px;
+    margin: 8px 5px 0 5px;
+    display: inline-block;
+    line-height: 16px;
+}
+#d3d2d1d7{
+    float: left;
+    width: 72px;
+    font-family:simsun;
+    margin-top: 12px;
+    float: left;
+}
+.d3d2d1d8{
+    color:#666;
+    float: left;
+    font-size: 14px;
+    width:640px;
+    margin-left: 6px;
+    margin-top: 10px;
+}
+#d3d2d1d9{
+    float: left;
+    width: 72px;
+    font-family:simsun;
+    margin-top: 12px;
+    float: left;
+}
+#d3d2d1d10{
+    float: left;
+    width: 72px;
+    font-family:simsun;
+    margin-top: 12px;
+    float: left;
+}
+#d3d2d2{
+    width:800px;
+    height: 55px;
+    text-align: center;
+    margin: 50px auto;
+}
+#buy{
+    text-align: center;
+    width:180px;
+    height:40px;
+    color:white;
+    background-color: red;
+    margin-left: -55px;
+    margin-bottom: 5px;
+    outline: none;
+    border:none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor:pointer;
+}
+#buy:hover{
+    background-color: deepskyblue;
+}
+#d4{
+    width:100%;
+    position: relative;
+    height:150px;
+    border-bottom:1px dashed black;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin-top:0;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: "微软雅黑";
+}
+#d4 p{
+    line-height: 150px;
+    font-weight: bold;
+    font-size: 25px;
+}
+#d5{
+    width: 65%;
+    height:180px;
+    text-align: center;
+    margin: 50px auto;
+    border: 1px solid #eee;
+    background-color: #eee;
+    border-radius: 5px;
+}
+#d5p1{
+    font-size: 14px;
+    font-family: 微软雅黑;
+    color:purple;
+    margin-top: 65px;
+}
+#d5p2{
+    font-size: 12px;
+    font-family: 微软雅黑;
+    color:red;
+    margin-top: 30px;
+}

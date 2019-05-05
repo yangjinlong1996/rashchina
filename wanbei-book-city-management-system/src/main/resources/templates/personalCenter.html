@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到皖北书城管理系统-我的丛书</title>
+    <link rel="stylesheet" href="css/personalCenter.css" type="text/css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/personalCenter.js"  th:inline="javascript"></script>
+
+</head>
+<body>
+<div id="d1">
+    <ul>
+        <li class="c2"><a href="/welcome">书城首页</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/welcome#d4a1">书城介绍</a></li><br/>
+                <li><a href="/welcome#d5a1">部分书籍展示</a></li><br/>
+                <li><a href="/welcome#d7a1">商务合作</a></li>
+            </ul>
+        </li>
+        <li class="c2"><a href="/mybooks">我的丛书</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/mybooks#d3">丛书列表</a></li><br/>
+                <li><a href="/mybooks#d5">我的书架</a></li><br/>
+                <li><a href="/mybooks#d7">数据统计</a></li>
+            </ul>
+        </li>
+        <li class="c2"><a href="/mallSelling">商城热卖</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/mallSelling#d2">热卖图书</a></li>
+            </ul>
+        </li>
+        <li class="c2"><a href="/guessLike">猜你喜欢</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/guessLike#d2">猜你喜欢</a></li>
+            </ul></li>
+        <li class="c1"><a href="/personalCenter"  style="color: white;">个人中心</a></li>
+        <li class="c2"><a href="/feedback">反馈建议</a></li>
+    </ul>
+    <span id="d1s1">站长邮箱：</span><span  id="d1s2">yangjinlong@zhuojianchina.com</span>
+</div>
+<div class="container">
+    <div class="box">
+        <img src="imgs/background1.jpg">
+        <img src="imgs/background2.jpg">
+        <img src="imgs/background3.jpeg">
+        <img src="imgs/background4.jpg">
+        <img src="imgs/background5.jpg">
+        <img src="imgs/background6.jpg">
+    </div>
+    <div class="circle">
+        <b class="current"></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+    </div>
+    <div class="btn left"> &lt; </div>
+    <div class="btn right"> &gt; </div>
+</div>
+<div id="d3">
+    <p>我的购物车</p>
+</div>
+<div id="d4">
+    <table border cellpadding="10" cellspacing="0" id="b1">
+        <tr><th class="th" style="width: 125px;">书名</th><th class="th">价格(元)</th><th class="th">状态</th>
+            <th class="th">快递公司</th><th class="th">快递单号</th>
+            <th class="th">操作1</th><th class="th">操作2</th></tr>
+    </table>
+    <p><span style="font-size:10px;color: gray;margin-top: 50px;">为了您的浏览体验,当前每页仅显示5条数据,当前页为 &nbsp;</span>
+        <span id="pageNo" style="color:red;font-size: 12px;"></span></p>
+    <p><span style="font-size:10px;color: gray;line-height: 20px;">您希望跳转到第&nbsp;<input type="text" id="wantPageNo" style="width: 16px;height: 12px;">&nbsp;页
+    </span> &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="确 定" id="submitButton"></p>
+</div>
+<div id="skm">
+    <div id="d5"><img src="imgs/weixinshoukuanma.png" class="skmImg"></div>
+    <div id="d6"><img src="imgs/shoukuanma.png" class="skmImg"></div>
+    <div id="d7"><img src="imgs/zhifubaoshoukuanma.jpg" class="skmImg"></div>
+</div>
+<p id="skmP">以上为商家收款二维码,左边为备用微信收款二维码,右边为备用支付宝收款码,支付时请记得备注书籍信息哦 ! ! !</p>
+<div id="ModifyTheInformation">
+嘻嘻哈哈
+</div>
+</body>
+</html>

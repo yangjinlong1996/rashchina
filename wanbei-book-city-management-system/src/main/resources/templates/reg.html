@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到注册页面！</title>
+    <link type="text/css" rel="stylesheet" href="css/reg.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="js/reg.js" th:inline="javascript"></script>
+</head>
+<body>
+<div id="head"><a href="http://www.zhuojianchina.com/" style="text-decoration: none">
+    <p>版权所有：杭州卓健科技有限公司</p></a></div>
+<div id="body">
+    <p>欢迎来到注册页面,请在本页面完成基本信息的填写(暂时只支持用户身份的注册)</p>
+    <p></p>
+    <input type="text" id="username" placeholder="请填写您的用户名"><br/><br/>
+    <input type="password" id="password" placeholder="请填写您的密码"><br/><br/>
+    <input type="password" id="truePassword" placeholder="请填写您的确认密码"><br/><br/>
+    <span style="visibility: hidden;">非常重要,请妥善保管！</span><input type="password" id="pwdKey" placeholder="请填写您的密钥"><span style="color:red">非常重要,请妥善保管！</span><br/><br/>
+    <span style="visibility: hidden;">非常重要,请妥善保管！</span><input type="password" id="truePwdKey" placeholder="请填写您的确认密钥"><span style="color:red">非常重要,请妥善保管！</span><br/><br/>
+    <input type="submit" value="提 交" id="button" style="background-color: cornflowerblue;width: 120px;"
+           onMouseOver="this.style.background='deepskyblue'"
+           onMouseOut="this.style.background='mediumslateblue'"><br/>
+    <a href="/index">点此返回登录页面</a>
+    <div id="d10">
+        <p></p><br/><br/><br/><br/><br/>
+        <p>皖北书城管理系统：致力于打造世界上最具特色的互联网书城网站。感谢相遇，感谢支持。</p>
+    </div>
+</div>
+</body>
+</html>

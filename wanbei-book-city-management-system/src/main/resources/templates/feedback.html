@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到皖北书城管理系统-商城热卖</title>
+    <link rel="stylesheet" href="css/feedback.css" type="text/css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/feedback.js"  th:inline="javascript"></script>
+</head>
+<body>
+<div id="d1">
+    <ul>
+        <li class="c2"><a href="/welcome">书城首页</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/welcome#d4a1">书城介绍</a></li><br/>
+                <li><a href="/welcome#d5a1">部分书籍展示</a></li><br/>
+                <li><a href="/welcome#d7a1">商务合作</a></li>
+            </ul>
+        </li>
+        <li class="c2"><a href="/mybooks">我的丛书</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/mybooks#d3">丛书列表</a></li><br/>
+                <li><a href="/mybooks#d5">我的书架</a></li><br/>
+                <li><a href="/mybooks#d7">数据统计</a></li>
+            </ul>
+        </li>
+        <li class="c2"><a href="/mallSelling">商城热卖</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/mallSelling#d2">热卖图书</a></li>
+            </ul>
+        </li>
+        <li class="c2"><a href="/guessLike">猜你喜欢</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/guessLike#d2">猜你喜欢</a></li>
+            </ul></li>
+        <li class="c2"><a href="/personalCenter">个人中心</a></li>
+        <li class="c1"><a href="#" style="color: white;">反馈建议</a></li>
+    </ul>
+    <span id="d1s1">站长邮箱：</span><span  id="d1s2">yangjinlong@zhuojianchina.com</span>
+</div>
+<div class="container">
+    <div class="box">
+        <img src="imgs/background1.jpg">
+        <img src="imgs/background2.jpg">
+        <img src="imgs/background3.jpeg">
+        <img src="imgs/background4.jpg">
+        <img src="imgs/background5.jpg">
+        <img src="imgs/background6.jpg">
+    </div>
+    <div class="circle">
+        <b class="current"></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+    </div>
+    <div class="btn left"> &lt; </div>
+    <div class="btn right"> &gt; </div>
+</div>
+</body>
+</html>

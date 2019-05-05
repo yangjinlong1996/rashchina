@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到找回密码页面</title>
+    <style>
+        #d1{
+            text-align: center;
+        }
+        #d2{
+            width:450px;
+            height:300px;
+            text-align: center;
+            margin:10px auto;
+            background-color: #eee;
+        }
+        #button{
+            width:100px;
+            height:30px;
+            color:white;
+            background-color: darkturquoise;
+            border:none;
+            outline: none;
+        }
+        #button:hover{
+            background-color: deepskyblue;
+        }
+    </style>
+    <script>
+        function fn(){
+            if (!confirm("是否确认提交？")) {
+                window.event.returnValue = false;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="d1">
+    <h3 style="color: red;">若您记得您的秘钥才能进行如下操作，若忘记秘钥，请联系首页的微信管理员获取</h3>
+    <p><a href="/index" style="text-decoration: none;">点此返回首页</a></p>
+</div>
+<div id="d2">
+    <form method="post" action="/findpassword">
+        <br/>
+        <p style="color:green;font-weight: bold;margin-bottom: 30px;">找 回 密 码</p>
+        <p><span>请输入您的密钥：</span><input type="text" name="pwdKey"></p>
+        <p><span>请输入您的账号：</span><input type="text" name="username"></p>
+        <p style="margin-bottom: 30px;"><span>输入您的新密码：</span><input type="password" name="newPassword"></p>
+        <p><input type="submit" value="提 交" onclick="fn()" id="button"></p>
+    </form>
+</div>
+</body>
+</html>

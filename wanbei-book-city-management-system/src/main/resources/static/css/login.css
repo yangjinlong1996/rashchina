@@ -1,0 +1,158 @@
+#head{
+    width:100%;
+    height:80px;
+    padding:0;
+    marging:0;
+    background: -webkit-linear-gradient(LightBLue,white);
+}
+#head p{
+    color:purple;
+    font-size:14px;
+    float:right;
+    margin-top:40px;
+    margin-right:100px;
+    font-family: 微软雅黑;
+}
+#head1{
+    width:100%;
+    height:100px;
+    margin:0 0 0 400px;
+}
+#head1img1{
+    width:80px;
+    height:80px;
+}
+#head1img2{
+    width:280px;
+    height:50px;
+    padding:0 10px 16px 8px;
+}
+#body{
+    background-image: url("../imgs/back.jpg");
+    width:480px;
+    height:300px;
+    background-size: cover;
+    margin-left: 700px;
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    color:gray;
+    font-family: 微软雅黑;
+    border-radius: 3px;
+}
+#body>p{
+    margin:5px 0;
+    font-family: 微软雅黑;
+    font-size: 15px;
+}
+#bodyleft{
+    width:360px;
+    height:120px;
+    margin:0;
+    float: left;
+}
+#bodyleft p{
+    text-align: right;
+    margin:5px 5px;
+    font-family: 微软雅黑;
+}
+#bodyright{
+    width:120px;
+    height:120px;
+    float: left;
+    background-image: url("../imgs/weixin.png");
+    background-size: cover;
+}
+#body1{
+    width:480px;
+    height:35px;
+    margin-left: 700px;
+    background: -webkit-linear-gradient(LightCyan,white);
+    margin-top:4px;
+}
+#foot{
+    width:500px;
+    height:360px;
+    margin: 0 0 0 200px;
+    background-image: url("../imgs/qsjb.jpg");
+    background-size: cover;
+    border-radius: 3px;
+}
+#footp1{
+    margin:0 0 10px 80px;
+}
+#s1{
+    color:cornflowerblue;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    font-weight: bold;
+}
+#s2{
+    font-size: 26px;
+}
+#s3{
+    color: gray;
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: bold;
+}
+#border{
+    text-align: center;
+    margin-left:80px;
+    margin-bottom: 20px;
+    width:300px;
+    border-top:1px solid blue;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-right-width: 0;
+}
+.footimg1{
+    width:13px;
+    height:13px;
+    margin:0 10px 0 80px;
+}
+#foot input{
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,0);
+}
+#people{
+    text-align: left;
+    font-size:12px;
+    color:blue;
+    margin-left:118px;
+    margin-top:20px;
+}
+#loginp{
+    margin:20px 0 0 105px;
+}
+#loginp input{
+    text-align: center;
+    width:100px;
+    height:30px;
+    color:white;
+    background-color: deepskyblue;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    outline: none;
+    border:none;
+    border-radius: 4px;
+}
+.buttonblue{
+    width:272px;
+    height:1px;
+    border-bottom:1px solid cornflowerblue;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin:0 0 0 108px;
+ }
+#loginp input:hover{
+    background-color: purple;
+    cursor: hand;
+}
+#forget a{
+    color:red;
+    text-decoration: none;
+    font-size: 12px;
+}

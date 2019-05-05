@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到皖北书城管理系统-商城热卖</title>
+    <link rel="stylesheet" href="css/mallSelling.css" type="text/css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/mallSelling.js"  th:inline="javascript"></script>
+</head>
+<body>
+<div id="d1">
+    <ul>
+        <li class="c2"><a href="/welcome">书城首页</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/welcome#d4a1">书城介绍</a></li><br/>
+                <li><a href="/welcome#d5a1">部分书籍展示</a></li><br/>
+                <li><a href="/welcome#d7a1">商务合作</a></li>
+            </ul>
+        </li>
+        <li class="c2"><a href="/mybooks">我的丛书</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/mybooks#d3">丛书列表</a></li><br/>
+                <li><a href="/mybooks#d5">我的书架</a></li><br/>
+                <li><a href="/mybooks#d7">数据统计</a></li>
+            </ul>
+        </li>
+        <li class="c1"><a href="#" style="color: white;">商城热卖</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="#d2">热卖图书</a></li>
+            </ul>
+        </li>
+        <li class="c2"><a href="/guessLike">猜你喜欢</a>
+            <ul>
+                <span></span><br/>
+                <li><a href="/guessLike#d2">猜你喜欢</a></li>
+            </ul></li>
+        <li class="c2"><a href="/personalCenter">个人中心</a></li>
+        <li class="c2"><a href="/feedback">反馈建议</a></li>
+    </ul>
+    <span id="d1s1">站长邮箱：</span><span  id="d1s2">yangjinlong@zhuojianchina.com</span>
+</div>
+<div class="container">
+    <div class="box">
+        <img src="imgs/background1.jpg">
+        <img src="imgs/background2.jpg">
+        <img src="imgs/background3.jpeg">
+        <img src="imgs/background4.jpg">
+        <img src="imgs/background5.jpg">
+        <img src="imgs/background6.jpg">
+    </div>
+    <div class="circle">
+        <b class="current"></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+        <b></b>
+    </div>
+    <div class="btn left"> &lt; </div>
+    <div class="btn right"> &gt; </div>
+</div>
+<div id="d2">
+    <p>热卖图书</p>
+</div>
+<div id="d3">
+    <div id="d3d1"></div>
+    <div id="d3d2">
+        <p id="d3d2p1">别在吃苦的年纪选择安逸 将来的你一定会感谢现在拼命的自己青春文学励志成功学正能量书籍</p>
+        <p id="d3d2p2">告别春天迎5.1 好货多多 多选凑满减 狂欢季!!!</p><!-- 此处用标红放大 作为广告词 -->
+        <div id="d3d2d1">
+            <div id="d3d2d1-price">
+                <!--将此处用浅色作为背景，标价格，及促销信息-->
+                <div id="d3d2d1d1">促 销 价</div>
+                <div id="d3d2d1d2">  ￥18.80</div>
+                <div id="d3d2d1d3"> 原价 ￥48.80</div>
+            </div>
+            <div id="d3d2d1-promotion">
+                <div id="d3d2d1d4">促销信息</div>
+                <div id="d3d2d1d5"><em class="em">满减</em>每满120元，可享受8折优惠</div>
+                <div id="d3d2d1d6"><em class="em">赠品</em>现在下单，可享受书内附赠DVD光盘一本</div>
+            </div>
+            <div id="d3d2d1-abstract">
+                <div id="d3d2d1d7">书籍简介</div>
+                <div class="d3d2d1d8">该书是作者景天的励志文集。
+                    有多少人在异地漂泊，忍受着寂寞与孤独，下雨没人送伞，吃饭没有人陪，
+                    没人分享喜悦，难过只能一个人哭……人生就是这样，耐得住寂寞才撑得起繁华；
+                    该奋斗的年龄，不要葬在了安逸，相信自己，终将破茧成蝶！</div>
+            </div>
+            <div id="d3d2d1-author">
+                <div id="d3d2d1d9">作者简介</div>
+                <div class="d3d2d1d8">景天，典型狮子座，从事编辑工作多年，目前供职于某大型杂志社。爱文字，爱美食，爱生活中所有的小确幸。</div>
+            </div>
+            <div id="d3d2d1-service">
+                <div id="d3d2d1d10">服务保障</div>
+                <div class="d3d2d1d8">本平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！
+                    注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，
+                    本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。
+                    只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！</div>
+            </div>
+        </div>
+        <div id="d3d2d2">
+         <input type="button" value="购&nbsp; &nbsp;&nbsp;买" id="buy">
+        </div>
+    </div>
+</div>
+<div id="d4">
+    <p>温 馨 提 示</p>
+</div>
+<div id="d5">
+<p id="d5p1">此页提交购买的书籍,请前往导航栏“个人中心”支付书籍价格。
+    支付成功后等待卖家审核通过后即可发货,还望您耐心等待,期待您早日收到爱书！</p>
+    <p id="d5p2">本书城出售书籍保证原装正品,无拆无破，假一赔十，欢迎监督</p>
+</div>
+</body>
+</html>

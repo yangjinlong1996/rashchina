@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>欢迎来到皖北书城管理系统！请登录</title>
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body>
+<div id="head"><a href="http://www.zhuojianchina.com/" style="text-decoration: none"><p>友情链接：杭州卓健科技有限公司</p></a></div>
+<div id="head1"><img src="imgs/logohsxy.png" id="head1img1"><img src="imgs/logo2.png" id="head1img2"></div>
+<div id="body">
+    <div id="bodyleft">
+        <br/><br/>
+        <p>使用微信扫一扫</p>
+        <p>或者使用微信搜索：sunshine1996long</p>
+        <p>获取皖北书城管理系统最新消息</p>
+    </div>
+    <div id="bodyright"></div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <p style="color: red">注意事项</p>
+    <p>1.账号密码忘记不能登录的，请联系微信管理员处理。</p>
+    <p>2.各类书籍管理信息请谨慎操作,稍有不慎可能丢失数据。</p>
+</div>
+<div id="body1"></div>
+<div id="foot">
+    <br/><br/>
+    <p id="footp1"><span id="s1">用 户 登 录</span>&nbsp; <span id="s2">/</span>&nbsp; <span id="s3">LOGIN</span></p>
+    <div id="border"></div>
+        <p style="margin:10px 0;"><img src="imgs/qq.jpg" class="footimg1"><span style="color: blue;">
+            用户名：</span><input type="username" id="username" style="width: 208px"></p>
+        <p class="buttonblue"></p>
+        <p style="margin:10px 0;"><img src="imgs/yaohsi.jpg" class="footimg1"><span style="color: blue">
+            密&nbsp;&nbsp;&nbsp;码：</span><input type="password" id="password" style="width: 208px"></p>
+        <p class="buttonblue"></p>
+        <p style="margin:10px 0;"><img src="imgs/baoxiang.jpg" class="footimg1"><span style="color: purple">
+            密&nbsp;&nbsp;&nbsp;钥：</span><input type="password" id="pwdKey" style="width: 208px"></p>
+        <p class="buttonblue"></p>
+        <p id="people"><label><input name="people" type="radio" value="1">用户</label>
+            <label><input name="people" type="radio" value="2">管理员</label>
+            <label><input name="people" type="radio" value="3">开发人员</label>
+            <label><input name="people" type="radio" value="4">访客</label>
+            </p>
+        <p id="loginp"><input type="button" value="登&nbsp; 录" id="button">
+            <input type="button" value="注&nbsp; 册" style="background-color: green;" onclick="window.location = '/reg'"></p>
+        <p id="forget" style="margin:0 0 0 180px;"><a href="/find">忘记密码？点我取回</a></p>
+</div>
+</body>
+</html>
