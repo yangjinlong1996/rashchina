@@ -125,3 +125,64 @@ ul li a{
 .right {
     right: 0;
 }
+#d3{
+    width:100%;
+    position: relative;
+    height:150px;
+    border-bottom:1px dashed black;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin-top:476px;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: "微软雅黑";
+}
+#d3 p{
+    line-height: 150px;
+    font-weight: bold;
+    font-size: 25px;
+}
+#feedBack{
+    width: 80%;
+    height:400px;
+    background-color: #eee;
+    border-radius: 8px;
+    margin:100px auto;
+    text-align: center;
+}
+#feedBack p{
+    color:purple;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+}
+#textarea{
+    border:1px dashed gray;
+    border-radius: 5px;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+    width:400px;
+    color: dimgray;
+    margin:50px auto 0 auto;
+    text-align: center;
+}
+#contactWay{
+    border-bottom: 1px solid mediumslateblue;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    width: 280px;
+    height:30px;
+    background-color: rgba(0,0,0,0);
+}
+#button{
+    height:35px;
+    font-size: 15px;
+    color:white;
+    font-family: 微软雅黑;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}

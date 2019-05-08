@@ -1,14 +1,8 @@
 package cn.edu.hsu.wanbeibookcitymanagementsystem.controller;
 
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.BookDO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.BuyBookDO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.LikeBookDO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.UserDO;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.*;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.*;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.BookMapper;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.BuyBookMapper;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.LikeBookMapper;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.UserMapper;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.*;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.service.UserService;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.util.ConvertUtils;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.util.PageList;
@@ -25,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import tk.mybatis.mapper.entity.Example;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -34,9 +27,6 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
-
-import static java.lang.System.out;
 
 
 /**
@@ -62,6 +52,9 @@ public class UserController {
 
     @Autowired
     BuyBookMapper buyBookMapper;
+
+    @Autowired
+    CooperateMapper cooperateMapper;
 
     /**
      * 欢迎页
@@ -419,5 +412,21 @@ public class UserController {
         }
         buyBookMapper.updateByPrimaryKey(buyBookDO.setStatus(2));
         return "请求已经提交商家处理,请等待商家审核通过后即可发货";
+    }
+
+    /**
+     * 建议与反馈信息内容入库
+     */
+    @RequestMapping("/feedbackInset")
+    @ResponseBody
+    public String feedbackInset(HttpServletRequest request,@RequestParam("feedback") String feedback,
+                                @RequestParam("contactWay") String contactWay){
+        //通过缓存拿到userId
+        String userId = request.getSession().getAttribute("userId").toString();
+        // 开始插入数据
+        cooperateMapper.insertSelective(new CooperateDO()
+                .setIsDelete(0).setContactWay(contactWay)
+                .setType(5).setCreateTime(new Date()).setUserId(userId).setInformation(feedback));
+        return "提交成功,感谢您对本网站的大力支持！";
     }
 }
