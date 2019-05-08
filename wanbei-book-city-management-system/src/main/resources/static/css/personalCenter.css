@@ -249,10 +249,16 @@ th , td{
 }
 #ModifyTheInformation{
     width: 80%;
-    height: 200px;
-    margin: 0 auto;
+    height: 110px;
+    margin: 50px auto;
+    padding: 20px 10px;
     text-align: center;
-    background-color: #999;
+    background-color: #eee;
     font-family: "Calibri Light";
-    border: 1px red solid;
+    border-radius: 5px;
+}
+#ModifyTheInformation p{
+    text-align: center;
+    margin:20px auto;
+    font-size: 14px;
 }

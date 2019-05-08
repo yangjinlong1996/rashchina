@@ -6,6 +6,8 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.Arrays;
+
 /**
  * @author: yangjinlong
  * @date: 2018/12/20 14:50
@@ -20,7 +22,7 @@ public class Configuration implements WebMvcConfigurer {
         LoginInterceptor loginInterceptor = new LoginInterceptor();
         InterceptorRegistration loginRegistry = registry.addInterceptor(loginInterceptor);
         // 拦截路径
-        loginRegistry.addPathPatterns("/welcome");
+        loginRegistry.addPathPatterns(Arrays.asList("/welcome","/mybooks","/mallSelling","/guessLike","/personalCenter"));
         // 排除路径
         loginRegistry.excludePathPatterns("/index")
                      .excludePathPatterns("/find")
