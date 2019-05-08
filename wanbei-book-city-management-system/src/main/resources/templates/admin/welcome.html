@@ -1,52 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>欢迎来到皖北书城管理系统-用户端</title>
-    <style>
-        #head{
-            width: 100%;
-            height:100px;
-            margin: 0 auto;
-            background-color: deepskyblue;
-            color:white;
-            font-size: 35px;
-            font-weight: bold;
-            text-align: center;
-            font-family: arial, "microsoft yahei";
-            border-radius: 5px;
-            line-height: 100px;
-        }
-        #body{
-            width:100%;
-            height:700px;
-            border:1px solid blue;
-            margin-top:50px;
-            position: relative;
-        }
-        #bodyLeft{
-            width:120px;
-            height:500px;
-            background-color: #eee;
-            float: left;
-            margin: 120px 0 0 20px;
-            border-radius: 6px;
-        }
-        #bodyLeft input{
-            width: 120px;
-            color:white;
-            height:50px;
-            font-size: 16px;
-            margin: 46px auto;
-            line-height: 50px;
-            text-align: center;
-            border-radius: 5px;
-            background-color: deepskyblue;
-            font-weight: bold;
-            outline: none;
-            border: none;
-        }
-    </style>
+    <title>欢迎来到皖北书城管理系统-管理端</title>
+    <script src="../jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/adWelcome.js"  th:inline="javascript"></script>
+    <link rel="stylesheet" href="../css/adWelcome.css" type="text/css">
 </head>
 <body>
 <div id="head">
@@ -60,7 +19,12 @@
         <p><input id="info" value = "合 作 信 息" type="button"></p>
     </div>
     <div id="bodyRight">
-
+        <table border cellpadding="10" cellspacing="0" id="b1">
+            <tr><th class="th">书号</th><th class="th" style="width: 125px;">书名</th>
+                <th class="th">作者</th><th style="width: 200px;" class="th">简要概述</th>
+                <th class="th">价格(元)</th><th class="th">本月销量(册)</th><th class="th">总销量(册)</th>
+                <th class="th">操作1</th><th class="th">操作2</th></tr>
+        </table>
     </div>
 </div>
 </body>
