@@ -15,7 +15,7 @@ import static cn.edu.hsu.wanbeibookcitymanagementsystem.dao.UserDO.FINAL_USERNAM
 /**
  * @author: yangjinlong
  * @date: 2018/12/20 14:48
- * @description:
+ * @description:登录模块
  */
 @Log
 @Controller
@@ -115,7 +115,13 @@ public class LoginViewController {
                 request.getSession().setAttribute("loginName", username);
                 request.getSession().setAttribute("userId", userDTO.getUserId());
                 log.info("将用户的userId用session存储-------->"+userDTO.getUserId());
-                message = "登录成功!";
+                if("1".equals(people)){
+                    message = "登录成功!";
+                }else if("2".equals(people)){
+                    message = "尊敬的管理员,欢迎您！";
+                }else if("3".equals(people)){
+                    message = "尊敬的开发者,欢迎您！";
+                }
                 return message;
             }else{
                 return message;

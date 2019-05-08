@@ -26,9 +26,15 @@ $(document).ready(function(e){
                 }else if(message == "尊敬的游客,欢迎您！") {
                     alert(message);
                     window.location.href = "/tourist";
+                }else if(message == "尊敬的管理员,欢迎您！"){
+                    alert(message);
+                    window.location.href = "/administrator/ad";
+                }else if(message == "尊敬的开发者,欢迎您！"){
+                    alert(message);
+                    window.location.href = "/author";
                 }else{
-                        alert(message);
-                    }
+                    alert(message);
+                }
             },
         });
     })

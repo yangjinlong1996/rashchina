@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * @author: yangjinlong
  * @date: 2018/12/12 14:17
- * @description:
+ * @description:用户模块
  */
 @Log
 @Controller
