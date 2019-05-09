@@ -17,6 +17,8 @@ function showData(data){
         alert("数据库中暂无书籍");
     }
     if(data.total != 0){
+        $("#pageNum").val(data.pageNum);
+        $("#lastPage").val(data.lastPage);
         $(".tr").empty();
         for (var i = 0; i < data.total; i++) {
             str = "<tr class='tr'><td class='td'>" + data.list[i].id + "</td>" +
@@ -29,6 +31,7 @@ function showData(data){
         }
     }
 }
+
 function deleteBook(bookId) {
     if(window.confirm('你确定要将该书从书库中删除吗？')){
         var message = "";
@@ -65,5 +68,45 @@ $(document).ready(function(){
             }
         })
     })
-
+    $("#top").click(function () {
+        var pageNo = $("#pageNum").val();
+        if(pageNo == "1"){
+            alert("当前已经是第一页了哦！");
+        }else{
+            var pageNum = Number(pageNo) - 1 ;
+            $.ajax({
+                url:"/administrator/showAdBooks",
+                type:"post",
+                data:{"search":search,"pageNum":pageNum},
+                dataType: "json",
+                success:function(data){
+                    showData(data);
+                },
+                error:function(msg){
+                    alert("网络异常,暂时无法获取数据"+msg);
+                }
+            })
+        }
+    })
+    $("#bottom").click(function () {
+        var pageNo = $("#pageNum").val();
+        var page = $("#lastPage").val();
+        if(page == "true"){
+            alert("当前已经是第最后一页了哦！");
+        }else{
+            var pageNum = Number(pageNo) + 1 ;
+            $.ajax({
+                url:"/administrator/showAdBooks",
+                type:"post",
+                data:{"search":search,"pageNum":pageNum},
+                dataType: "json",
+                success:function(data){
+                    showData(data);
+                },
+                error:function(msg){
+                    alert("网络异常,暂时无法获取数据"+msg);
+                }
+            })
+        }
+    })
 })
