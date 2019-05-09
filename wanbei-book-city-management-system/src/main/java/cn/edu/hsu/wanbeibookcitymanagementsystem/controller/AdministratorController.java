@@ -40,13 +40,13 @@ public class AdministratorController {
     @RequestMapping("/showAdBooks")
     @ResponseBody
     public PageUtil showAdBooks(@RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
-                                @RequestParam(value = "pageNum",defaultValue = "10") Integer pageSize,
-                                @RequestParam(value = "pageSize",required = false) String search){
-        log.info("开始统计书籍");
+                                @RequestParam(value = "pageSize",defaultValue = "5") Integer pageSize,
+                                @RequestParam(value = "search",required = false) String search){
+        log.info("开始统计书籍--->search = "+search);
         if(StringUtil.isNotEmpty(search)){
-           return bookService.showAdBooks(pageNum,pageSize,"");
+           return bookService.showAdBooks(pageNum,pageSize,search);
         }else{
-          return bookService.showAdBooks(pageNum,pageSize,search);
+          return bookService.showAdBooks(pageNum,pageSize,"");
         }
     }
 

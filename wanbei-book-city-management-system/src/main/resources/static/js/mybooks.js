@@ -128,7 +128,7 @@ function showData(data){
                     "<td class='td' style='font-size: 10px;'>" + data[i].message + "</td><td class='td'>" + data[i].price + "</td>" +
                     "<td class='td'>" + data[i].mouthSales + "</td><td class='td'>" + data[i].allSales + "</td><td style='display: none'>" + data[i].id + "</td>" +
                     "<td class='tp'><input type='button' value='加入书架' class='t_button1'onclick='addBook("+data[i].id+")'></td>" +
-                    "<td class='tp'><input type='button' value='删除本书' class='t_button2'onclick='deleteBook("+data[i].id+")'></td></tr>";
+                    "</tr>";
                 $("#b1").append(str);
             }
         }
@@ -149,25 +149,7 @@ function addBook(bookId) {
         }
     });
 };
-function deleteBook(bookId) {
-    if(window.confirm('你确定要将该书从您的丛书中删除吗？')){
-        var message = "";
-        $.ajax({
-            url:"/deleteBook",
-            type:"post",
-            data:{"bookId":bookId,"message":message},
-            dataType: "TEXT",
-            success:function(message){
-                alert(message);
-            },
-            error:function(msg){
-                alert("网络异常,暂时无法获取数据"+msg);
-            }
-        });
-    }else{
-        alert("您已取消操作");
-    }
-};
+
 $(function(){
     var total = 0;
     var pages = 0;

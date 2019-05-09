@@ -19,12 +19,18 @@
         <p><input id="info" value = "合 作 信 息" type="button"></p>
     </div>
     <div id="bodyRight">
+        <p><input id="updateBook" value="编辑书籍" type="button" class="b_book">
+            <input type="button" value="新增书籍" id="insertBook" class="b_book">
+            <input id="seachBook" type="text" placeholder="输入书名搜索"><input id="search" type="button" value="搜  索"></p>
         <table border cellpadding="10" cellspacing="0" id="b1">
             <tr><th class="th">书号</th><th class="th" style="width: 125px;">书名</th>
                 <th class="th">作者</th><th style="width: 200px;" class="th">简要概述</th>
                 <th class="th">价格(元)</th><th class="th">本月销量(册)</th><th class="th">总销量(册)</th>
-                <th class="th">操作1</th><th class="th">操作2</th></tr>
+                <th class="th">操作</th></tr>
         </table>
+        <p><input id="top" value="上一页" type="button" class="b_book">
+            <span type="text" id="pageNum" style="display: none"></span><input id="bottom" type="button" value="下一页"  class="b_book"></p>
+        <p id="bodyP1">为了您的浏览体验,每页仅显示5条数据</p>
     </div>
 </div>
 </body>

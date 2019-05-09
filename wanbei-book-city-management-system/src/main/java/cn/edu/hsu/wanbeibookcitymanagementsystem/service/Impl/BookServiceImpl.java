@@ -7,6 +7,7 @@ import cn.edu.hsu.wanbeibookcitymanagementsystem.service.BookService;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.util.ConvertUtils;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.util.PageUtil;
 import com.mysql.cj.util.StringUtils;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
@@ -14,6 +15,7 @@ import tk.mybatis.mapper.util.StringUtil;
 
 import java.util.List;
 
+@Log
 @Service
 public class BookServiceImpl implements BookService {
 
@@ -27,6 +29,7 @@ public class BookServiceImpl implements BookService {
         Example.Criteria criteria = e.createCriteria();
         criteria.andEqualTo("isDelete",0);
         if(StringUtil.isNotEmpty(str)){
+            log.info("按书名查询");
             criteria.andLike("bookName","%".concat(str).concat("%"));
         }
         List<BookDO> bookDOS = bookMapper.selectByExample(e);

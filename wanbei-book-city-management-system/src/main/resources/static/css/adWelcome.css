@@ -62,11 +62,62 @@ th , td{
 #bodyLeft input:hover{
     background-color: cornflowerblue;
 }
+.t_a{
+    color:royalblue;
+    text-decoration: none;
+}
 #bodyRight{
     width:1000px;
-    height:500px;
+    height:600px;
     border: 1px solid red;
+    border-radius: 5px;
     background-color: #eee;
     float: left;
-    margin:100px 0 0 180px; ;
+    margin:80px 0 0 180px;
+    overflow: hidden;
+    text-align: center;
+}
+.t_button2{
+    background-color: red;
+    font-size: 12px;
+    color: white;
+    border: none;
+    outline: none;
+    width:70px;
+    height:25px;
+    font-family: 微软雅黑;
+    border-radius: 4px;
+}
+.b_book{
+    width:100px;
+    height:25px;
+    color:white;
+    background-color: deepskyblue;
+    border-radius: 4px;
+    margin: 0 50px;
+    outline: none;
+    border: none;
+    cursor:pointer;
+}
+.b_book:hover{
+    background-color: #df3033;
+}
+#search{
+    width:80px;
+    height:25px;
+    color:white;
+    background-color: lightskyblue;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor:pointer;
+    margin-left:10px;
+}
+#seach:hover{
+    background-color: olivedrab;
+}
+#bodyP1{
+    text-align: center;
+    color:#999;
+    font-size: 12px;
 }
