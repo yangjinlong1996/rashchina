@@ -77,7 +77,7 @@ $(document).ready(function(){
             $.ajax({
                 url:"/administrator/showAdBooks",
                 type:"post",
-                data:{"search":search,"pageNum":pageNum},
+                data:{"pageNum":pageNum},
                 dataType: "json",
                 success:function(data){
                     showData(data);
@@ -98,7 +98,7 @@ $(document).ready(function(){
             $.ajax({
                 url:"/administrator/showAdBooks",
                 type:"post",
-                data:{"search":search,"pageNum":pageNum},
+                data:{"pageNum":pageNum},
                 dataType: "json",
                 success:function(data){
                     showData(data);
@@ -108,5 +108,72 @@ $(document).ready(function(){
                 }
             })
         }
+    })
+    //弹出div层
+    $("#updateBook").click(function () {
+        $("#updateDiv input").val("");
+        $("#updateO").val("确认修改");
+        $("#updateDiv").fadeIn(500);
+    })
+    //弹出div层
+    $("#insertBook").click(function () {
+        $("#insertDiv").fadeIn(500);
+        $("#insertDiv input").val("");
+        $("#updateT").val("确认添加");
+    })
+    $("#updateO").click(function () {
+        $("#updateDiv").fadeOut(500,function () {
+            var enable = 1;
+            var bookId = $("#bookId").val();
+            var bookName = $("#bookName").val();
+            var bookAuthor = $("#bookAuthor").val();
+            var bookMessage = $("#bookMessage").val();
+            var bookPrice = $("#bookPrice").val();
+            $.ajax({
+                headers:{
+                    "content-type":"application/json"
+                },
+                url:"/administrator/updateBook",
+                type:"post",
+                data:JSON.stringify({"bookId":bookId,"bookName":bookName,"bookAuthor":bookAuthor,
+                    "bookMessage":bookMessage,"bookPrice":bookPrice,"enable":enable}),
+                dataType:"TEXT",
+                success:function(data){
+                    alert(data);
+                },
+                error:function () {
+                    alert("网络异常,请稍后再试");
+                }
+            })
+        });
+    })
+    $("#updateT").click(function () {
+        $("#insertDiv").fadeOut(500,function () {
+            var enable = 2;
+            var bookName = $("#bookName_1").val();
+            var bookAuthor = $("#bookAuthor_1").val();
+            var bookMessage = $("#bookMessage_1").val();
+            var bookPrice = $("#bookPrice_1").val();
+            var mouthSales = $("#mouth_sales").val();
+            var allSales = $("#all_sales").val();
+            var username = $("#people").val();
+            $.ajax({
+                headers:{
+                    "content-type":"application/json"
+                },
+                url:"/administrator/updateBook",
+                type:"post",
+                data:JSON.stringify({"bookName":bookName,"bookAuthor":bookAuthor,
+                    "bookMessage":bookMessage,"bookPrice":bookPrice,
+                    "mouthSales":mouthSales,"allSales":allSales,"username":username,"enable":enable}),
+                dataType:"TEXT",
+                success:function(data){
+                    alert(data);
+                },
+                error:function () {
+                    alert("网络异常,请稍后再试");
+                }
+            })
+        });
     })
 })
