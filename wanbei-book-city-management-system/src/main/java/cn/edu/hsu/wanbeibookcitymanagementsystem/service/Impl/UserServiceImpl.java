@@ -267,4 +267,14 @@ public class UserServiceImpl implements UserService {
         log.info("list---->"+list);
         return new PageUtil<>(list,pageNum,pageSize);
     }
+
+    @Override
+    public PageUtil<UserDO> showAuUser(Integer pageNum, Integer pageSize, String str) {
+        if(StringUtils.isBlank(str)){
+            return new PageUtil<>(userMapper.selectAll(),pageNum,pageSize);
+        }
+        Example e = new Example(UserDO.class);
+        e.createCriteria().andLike("username","%".concat(str).concat("%"));
+        return new PageUtil<>(userMapper.selectByExample(e),pageNum,pageSize);
+    }
 }

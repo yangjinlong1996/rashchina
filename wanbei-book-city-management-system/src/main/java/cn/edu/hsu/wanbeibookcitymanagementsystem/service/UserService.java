@@ -75,4 +75,6 @@ public interface UserService {
     Integer updateUser(UpdateUserModel updateUserModel);
 
     PageUtil<PayModel> showAdPay(Integer pageNum, Integer pageSize, String str);
+
+    PageUtil<UserDO> showAuUser(Integer pageNum, Integer pageSize, String str);
 }

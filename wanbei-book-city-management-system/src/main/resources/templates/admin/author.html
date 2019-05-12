@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到皖北书城管理系统-开发人员端</title>
+    <script src="../jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/author.js"  th:inline="javascript"></script>
+    <link rel="stylesheet" href="../css/author.css" type="text/css">
+</head>
+<body>
+<div id="head">
+    皖 &nbsp;&nbsp;北&nbsp;&nbsp; 书&nbsp;&nbsp; 城&nbsp;&nbsp; 信&nbsp;&nbsp;
+    息&nbsp;&nbsp; 管&nbsp;&nbsp; 理&nbsp;&nbsp; 系&nbsp;&nbsp; 统&nbsp;&nbsp;
+</div>
+<div id="body">
+    <p style="margin: 30px auto 40px auto">
+        <input id="seachBook" type="text" placeholder="输入用户名搜索"><input id="search" type="button" value="搜  索"></p>
+    <table border cellpadding="10" cellspacing="0" id="b1">
+        <tr><th class="th">编号</th><th class="th" style="width: 150px;">用户id</th>
+            <th class="th">用户名</th><th class="th">禁用状态</th>
+            <th class="th">创建时间</th><th class="th">密钥</th><th class="th">用户身份</th>
+            <th class="th">操作1</th><th class="th">操作2</th></tr>
+    </table>
+    <p style="margin-top: 40px"><input id="top" value="上一页" type="button" class="b_book">
+        <input type="text" id="pageNum" style="display: none"><input type="text" id="lastPage" style="display: none">
+        <input id="bottom" type="button" value="下一页"  class="b_book"></p>
+    <p id="bodyP1">为了您的浏览体验,每页仅显示5条数据</p>
+</div>
+<p style="margin: -325px auto 0 auto;text-align: center">
+    <a href="https://github.com/yangjinlong1996/rashchina/tree/dev" style="text-align: center;color: purple;font-size: 13px">点击进入该系统GitHub公有仓库地址，欢迎您的访问</a></p>
+</body>
+</html>
