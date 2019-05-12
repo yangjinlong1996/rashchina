@@ -17,6 +17,10 @@ th , td{
 .tp{
     background: url("../imgs/cell2.jpg");
 }
+#b1{
+    text-align: center;
+    margin: auto;
+}
 #head{
     width: 100%;
     height:100px;

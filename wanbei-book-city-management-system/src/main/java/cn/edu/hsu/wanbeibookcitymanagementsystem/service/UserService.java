@@ -3,8 +3,8 @@ package cn.edu.hsu.wanbeibookcitymanagementsystem.service;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.BookDO;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.CooperateDO;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.UserDO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.BookDTO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.CooperateDTO;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.*;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.util.PageUtil;
 
 import java.util.List;
 
@@ -50,4 +50,27 @@ public interface UserService {
      * @param bookName
      */
     void addBook(String username,String bookName);
+
+    /**
+     * 管理端查看用户信息
+     * @param pageNum 页数
+     * @param pageSize 条数
+     * @param str 搜索条件
+     * @return
+     */
+    PageUtil<UserDTO> showAdUser(Integer pageNum, Integer pageSize, String str);
+
+    /**
+     * 管理端查看用户信息
+     * @param pageNum 页数
+     * @param pageSize 条数
+     * @param str 搜索条件
+     * @return
+     */
+    PageUtil<CooperateDTO> showAdinfo(Integer pageNum, Integer pageSize, String str);
+
+
+    Integer updateUser(UpdateUserModel updateUserModel);
+
+    PageUtil<PayModel> showAdPay(Integer pageNum, Integer pageSize, String str);
 }

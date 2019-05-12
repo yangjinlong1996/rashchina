@@ -19,6 +19,11 @@ public class CooperateDTO {
     /**
      * 用户id
      */
+    private String id;
+
+    /**
+     * 用户id
+     */
     @Column(name = "user_id")
     private String userId;
 

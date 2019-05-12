@@ -4,20 +4,21 @@ import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.BookDO;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.CooperateDO;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.LikeBookDO;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.UserDO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.BookDTO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.CooperateDTO;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.*;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.BookMapper;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.CooperateMapper;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.LikeBookMapper;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.UserMapper;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.service.UserService;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.util.ConvertUtils;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.util.PageUtil;
 import com.github.pagehelper.PageHelper;
-import com.mysql.cj.util.StringUtils;
+import lombok.extern.java.Log;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.util.StringUtil;
 
 import java.util.*;
 
@@ -28,6 +29,7 @@ import static cn.edu.hsu.wanbeibookcitymanagementsystem.util.statusUtils.*;
  * @date: 2018/12/12 14:25
  * @description:
  */
+@Log
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -58,13 +60,13 @@ public class UserServiceImpl implements UserService {
                 .setPwdKey(pwdKey)
                 .setPeople(people)
                 .setIsDelete(IS_DELETE_ZERO);
-        if(StringUtils.isNullOrEmpty(username)){
+        if(StringUtils.isBlank(username)){
             userDO.setData("用户名不得为空,请重新输入！");
             return userDO;
-        }else if(StringUtils.isNullOrEmpty(password)){
+        }else if(StringUtils.isBlank(password)){
             userDO.setData("密码不能为空,请重新输入！");
             return userDO;
-        }else if(StringUtils.isNullOrEmpty(pwdKey)){
+        }else if(StringUtils.isBlank(pwdKey)){
             userDO.setData("秘钥不得为空,请重新输入！");
             return userDO;
         }else if(ZERO == userMapper.selectCount(userDO)){
@@ -192,5 +194,62 @@ public class UserServiceImpl implements UserService {
                 .setIsDelete(0)
                 .setBookId(bookMapper.selectOne(new BookDO().setIsDelete(0).setBookName(bookName)).getId())
                 .setUsername(username));
+    }
+
+    @Override
+    public PageUtil<UserDTO> showAdUser(Integer pageNum, Integer pageSize, String str) {
+        Example e = new Example(UserDO.class);
+        Example.Criteria criteria = e.createCriteria();
+        criteria.andEqualTo("isDelete",0).andEqualTo("people",1);
+        if(StringUtil.isNotEmpty(str)){
+            log.info("按用户名查询");
+            criteria.andLike("username","%".concat(str).concat("%"));
+        }
+        List<UserDO> userDOS = userMapper.selectByExample(e);
+        return new PageUtil<>(ConvertUtils.convert(userDOS,UserDTO.class),pageNum,pageSize);
+    }
+
+    @Override
+    public PageUtil<CooperateDTO> showAdinfo(Integer pageNum, Integer pageSize, String str) {
+        Example e = new Example(CooperateDO.class);
+        Example.Criteria criteria = e.createCriteria();
+        criteria.andEqualTo("isDelete",0);
+        if(StringUtil.isNotEmpty(str)){
+            log.info("按用户名查询");
+            criteria.andLike("username","%".concat(str).concat("%"));
+        }
+        List<CooperateDO> cooperateDOS = cooperateMapper.selectByExample(e);
+        return new PageUtil<>(ConvertUtils.convert(cooperateDOS,CooperateDTO.class),pageNum,pageSize);
+    }
+
+    @Override
+    public Integer updateUser(UpdateUserModel updateUserModel) {
+        Example e = new Example(UserDO.class);
+        e.createCriteria().andEqualTo("isDelete",0)
+                .andEqualTo("id",updateUserModel.getId());
+        UserDO userDO = userMapper.selectOneByExample(e);
+        if(null == userDO){
+            return null;
+        }
+        if(updateUserModel.getEnable() == 1){
+            if(StringUtils.isNotBlank(updateUserModel.getUsername()) ){
+                userDO.setUsername(updateUserModel.getUsername());
+            }
+            if(StringUtils.isNotBlank(updateUserModel.getPwdKey()) ){
+                userDO.setPwdKey(updateUserModel.getPwdKey());
+            }
+            userDO.setUpdateTime(new Date());
+            return userMapper.updateByExample(userDO,e);
+        }
+        userDO.setIsDelete(1).setDeleteTime(new Date());
+        return userMapper.updateByExample(userDO,e);
+    }
+
+    @Override
+    public PageUtil<PayModel> showAdPay(Integer pageNum, Integer pageSize, String str) {
+        log.info("str-->"+str);
+        List<PayModel> list = userMapper.showAdPay(str);
+        log.info("list---->"+list);
+        return new PageUtil<>(list,pageNum,pageSize);
     }
 }

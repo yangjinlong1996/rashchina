@@ -3,25 +3,13 @@ package cn.edu.hsu.wanbeibookcitymanagementsystem.dto;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-/**
- * @author: yangjinlong
- * @date: 2018/12/12 14:13
- * @description:
- */
-@Data
 @Accessors(chain = true)
-public class UserDTO {
-
-
+@Data
+public class UpdateUserModel {
     /**
      * 用户id
      */
     private String id;
-
-    /**
-     * 用户id
-     */
-    private String userId;
 
     /**
      * 管理员账户
@@ -29,22 +17,12 @@ public class UserDTO {
     private String username;
 
     /**
-     * 管理员密码
-     */
-    private String password;
-
-    /**
      * 管理员秘钥
      */
     private String pwdKey;
 
     /**
-     * 说明内容
+     * 1编辑 2删除
      */
-    private String data;
-
-    /**
-     * 登录身份
-     */
-    private Integer people;
+    private Integer enable;
 }

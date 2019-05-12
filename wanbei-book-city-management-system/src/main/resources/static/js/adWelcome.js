@@ -176,4 +176,13 @@ $(document).ready(function(){
             })
         });
     })
+    $("#user").click(function () {
+        window.location.href = "/administrator/ad_user";
+    })
+    $("#info").click(function () {
+        window.location.href = "/administrator/ad_info";
+    })
+    $("#pay").click(function () {
+        window.location.href = "/administrator/ad_pay";
+    })
 })

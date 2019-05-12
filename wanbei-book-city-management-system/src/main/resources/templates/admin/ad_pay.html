@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到皖北书城管理系统-管理端</title>
+    <script src="../jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/ad_pay.js"  th:inline="javascript"></script>
+    <link rel="stylesheet" href="../css/ad_pay.css" type="text/css">
+</head>
+<body>
+<div id="head">
+    皖 &nbsp;&nbsp;北&nbsp;&nbsp; 书&nbsp;&nbsp; 城&nbsp;&nbsp; 信&nbsp;&nbsp;
+    息&nbsp;&nbsp; 管&nbsp;&nbsp; 理&nbsp;&nbsp; 系&nbsp;&nbsp; 统&nbsp;&nbsp;
+</div>
+<div id="body">
+    <div id="bodyLeft">
+        <p style="margin-top: 50px;"><input id="book" value = "书 籍 管 理" type="button"></p>
+        <p><input id="user" value = "用 户 管 理" type="button"></p>
+        <p><input id="info" value = "合 作 信 息" type="button"></p>
+        <p><input id="pay"  value = "订 单 管 理" type="button"></p>
+    </div>
+    <div id="bodyRight">
+        <p style="margin: 30px auto 40px auto">
+            <input id="seachBook" type="text" placeholder="输入用户名搜索"><input id="search" type="button" value="搜  索"></p>
+        <table border cellpadding="10" cellspacing="0" id="b1">
+            <tr><th class="th">书号</th><th class="th" style="width: 125px;">用户名</th>
+                <th class="th">状态</th><th class="th">快递名</th>
+                <th class="th" style="width: 150px;">快递单号</th><th class="th">操作</th></tr>
+        </table>
+        <p style="margin-top: 40px"><input id="top" value="上一页" type="button" class="b_book">
+            <input type="text" id="pageNum" style="display: none"><input type="text" id="lastPage" style="display: none">
+            <input id="bottom" type="button" value="下一页"  class="b_book"></p>
+        <p id="bodyP1">为了您的浏览体验,每页仅显示5条数据</p>
+    </div>
+</div>
+<div id = "updateDiv">
+    <span style="color: red;margin-left: -12px;margin-top: 80px">* </span>
+    <input type="text" id="id" placeholder="请输入用户编号" class="upInput" style="margin-top: 80px"><br/><br/><br/>
+    <input type="text" id="username" placeholder="请输入修改后的用户名" class="upInput"><br/><br/><br/>
+    <input type="text" id="pwdKey" placeholder="请输入修改后的密钥" class="upInput"><br/><br/><br/>
+    <input type="button" id="updateO" class="update" value="确认修改">
+    <p style="color: palevioletred;font-size: 12px">温馨提示：以上内容不填,表示数据不进行修改</p>
+</div>
+</body>
+</html>

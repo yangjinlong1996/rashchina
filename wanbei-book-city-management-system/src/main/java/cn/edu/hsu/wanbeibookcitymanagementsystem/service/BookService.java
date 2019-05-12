@@ -2,6 +2,7 @@ package cn.edu.hsu.wanbeibookcitymanagementsystem.service;
 
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.BookDTO;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.UpdateBookModel;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.UserDTO;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.util.PageUtil;
 
 public interface BookService {
@@ -14,6 +15,8 @@ public interface BookService {
      * @return
      */
      PageUtil<BookDTO> showAdBooks(Integer pageNum,Integer pageSize,String str);
+
+
 
     /**
      * 新增和编辑书籍信息
