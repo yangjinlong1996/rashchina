@@ -51,11 +51,11 @@ public class UserServiceImpl implements UserService {
         if(null == buyBookDO){
             return null;
         }
-        if(buyBookDO.getStatus() != 2){
+        if(buyBookDO.getStatus() != 2 && buyBookDO.getStatus() != 3){
             return 0;
         }
         buyBookDO.setCourierName(updatePayModel.getCourierName())
-                .setStatus(4)
+                .setStatus(4).setUpdateTime(new Date())
                 .setCourierNumber(updatePayModel.getCourierNumber());
         return buyBookMapper.updateByExample(buyBookDO,example);
     }

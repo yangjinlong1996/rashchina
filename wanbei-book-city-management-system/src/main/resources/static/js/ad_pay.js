@@ -137,8 +137,12 @@ $(document).ready(function(){
     })
 })
 function payBook() {
-    $("#updateDiv input").val("");
-    $("#updateO").val("确认发货");
-    $("#updateDiv").fadeIn(500);
+    if(confirm("您确定已经收到该用户的购书款了么？")){
+        $("#updateDiv input").val("");
+        $("#updateO").val("确认发货");
+        $("#updateDiv").fadeIn(500);
+    }else{
+        alert("您已取消操作");
+    }
 }
 
