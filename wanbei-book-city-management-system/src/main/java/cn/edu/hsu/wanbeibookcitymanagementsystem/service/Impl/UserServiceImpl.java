@@ -1,14 +1,8 @@
 package cn.edu.hsu.wanbeibookcitymanagementsystem.service.Impl;
 
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.BookDO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.CooperateDO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.LikeBookDO;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.UserDO;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.dao.*;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.*;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.BookMapper;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.CooperateMapper;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.LikeBookMapper;
-import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.UserMapper;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.mapper.*;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.service.UserService;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.util.ConvertUtils;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.util.PageUtil;
@@ -44,6 +38,27 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     LikeBookMapper likeBookMapper;
+
+    @Autowired
+    BuyBookMapper buyBookMapper;
+
+
+    @Override
+    public Integer updatePay(UpdatePayModel updatePayModel) {
+        Example example = new Example(BuyBookDO.class);
+        example.createCriteria().andEqualTo("id",updatePayModel.getId());
+        BuyBookDO buyBookDO = buyBookMapper.selectOneByExample(example);
+        if(null == buyBookDO){
+            return null;
+        }
+        if(buyBookDO.getStatus() != 2){
+            return 0;
+        }
+        buyBookDO.setCourierName(updatePayModel.getCourierName())
+                .setStatus(4)
+                .setCourierNumber(updatePayModel.getCourierNumber());
+        return buyBookMapper.updateByExample(buyBookDO,example);
+    }
 
     /**
      * 根据用户名和密码完成用户登录

@@ -32,12 +32,13 @@ function showData(data){
                 case 7 : status = "评价完成";   break;
                 default: status = "未知交易状态";break;
             }
-            str = "<tr class='tr'><td class='td'>" + data.list[i].bookId + "</td>" +
+            str = "<tr class='tr'><td class='td'>" + data.list[i].id + "</td>" +
+                "<td class='td'>" + data.list[i].bookId + "</td>" +
                 "<td class='td'>" + data.list[i].username + "</td>" +
                 "<td class='td'>" + status + "</td>" +
                 "<td class='td'>" + data.list[i].courierName + "</td>" +
                 "<td class='td'>" + data.list[i].courierNumber + "</td>" +
-                "<td class='tp'><input type='button' value='我要发货' class='t_button2' onclick='info()'></td></tr>";
+                "<td class='tp'><input type='button' value='我要发货' class='t_button2' onclick='payBook("+ data.list[i].id +")'></td></tr>";
             $("#b1").append(str);
         }
     }
@@ -84,36 +85,6 @@ $(document).ready(function(){
             })
         }
     })
-    //弹出div层
-    $("#updateBook").click(function () {
-        $("#updateDiv input").val("");
-        $("#updateO").val("确认修改");
-        $("#updateDiv").fadeIn(500);
-    })
-    $("#updateO").click(function () {
-        $("#updateDiv").fadeOut(500,function () {
-            var enable = 1;
-            var id = $("#id").val();
-            var username = $("#username").val();
-            var pwdKey = $("#pwdKey").val();
-            $.ajax({
-                headers:{
-                    "content-type":"application/json"
-                },
-                url:"/administrator/updateUser",
-                type:"post",
-                data:JSON.stringify({"id":id,"username":username,
-                    "pwdKey":pwdKey,"enable":enable}),
-                dataType:"TEXT",
-                success:function(data){
-                    alert(data);
-                },
-                error:function () {
-                    alert("网络异常,请稍后再试");
-                }
-            })
-        });
-    })
     $("#user").click(function () {
         window.location.href = "/administrator/ad_user";
     })
@@ -141,4 +112,33 @@ $(document).ready(function(){
             }
         })
     })
+    $("#updateO").click(function () {
+        $("#updateDiv").fadeOut(500,function (id) {
+            var id = $("#id").val();
+            var courierName = $("#courierName").val();
+            var courierNumber = $("#courierNumber").val();
+            $.ajax({
+                headers:{
+                    "content-type":"application/json"
+                },
+                url:"/administrator/updatePay",
+                type:"post",
+                data:JSON.stringify({"id":id,"courierName":courierName,
+                    "courierNumber":courierNumber}),
+                dataType:"TEXT",
+                success:function(data){
+                    alert(data);
+                },
+                error:function () {
+                    alert("网络异常,请稍后再试");
+                }
+            })
+        });
+    })
 })
+function payBook() {
+    $("#updateDiv input").val("");
+    $("#updateO").val("确认发货");
+    $("#updateDiv").fadeIn(500);
+}
+

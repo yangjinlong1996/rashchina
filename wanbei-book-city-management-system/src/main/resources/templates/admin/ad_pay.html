@@ -23,7 +23,7 @@
         <p style="margin: 30px auto 40px auto">
             <input id="seachBook" type="text" placeholder="输入用户名搜索"><input id="search" type="button" value="搜  索"></p>
         <table border cellpadding="10" cellspacing="0" id="b1">
-            <tr><th class="th">书号</th><th class="th" style="width: 125px;">用户名</th>
+            <tr><th class="th">编号</th><th class="th">书号</th><th class="th" style="width: 125px;">用户名</th>
                 <th class="th">状态</th><th class="th">快递名</th>
                 <th class="th" style="width: 150px;">快递单号</th><th class="th">操作</th></tr>
         </table>
@@ -35,11 +35,11 @@
 </div>
 <div id = "updateDiv">
     <span style="color: red;margin-left: -12px;margin-top: 80px">* </span>
-    <input type="text" id="id" placeholder="请输入用户编号" class="upInput" style="margin-top: 80px"><br/><br/><br/>
-    <input type="text" id="username" placeholder="请输入修改后的用户名" class="upInput"><br/><br/><br/>
-    <input type="text" id="pwdKey" placeholder="请输入修改后的密钥" class="upInput"><br/><br/><br/>
-    <input type="button" id="updateO" class="update" value="确认修改">
-    <p style="color: palevioletred;font-size: 12px">温馨提示：以上内容不填,表示数据不进行修改</p>
+    <input type="text" id="id" placeholder="请输入编号" class="upInput" style="margin-top: 80px"><br/><br/><br/>
+    <input type="text" id="courierName" placeholder="请输入快递名" class="upInput"><br/><br/><br/>
+    <input type="text" id="courierNumber" placeholder="请输入快递单号" class="upInput"><br/><br/><br/>
+    <input type="button" id="updateO" class="update" value="确认发货">
+    <p style="color: palevioletred;font-size: 12px">温馨提示：请将以上内容填写完整</p>
 </div>
 </body>
 </html>

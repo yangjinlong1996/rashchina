@@ -1,6 +1,7 @@
 package cn.edu.hsu.wanbeibookcitymanagementsystem.controller;
 
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.UpdateBookModel;
+import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.UpdatePayModel;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.dto.UpdateUserModel;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.service.BookService;
 import cn.edu.hsu.wanbeibookcitymanagementsystem.service.UserService;
@@ -182,6 +183,27 @@ public class AdministratorController {
         }
         bookService.update(updateBookModel);
         return "新增成功！";
+    }
+
+    /**
+     * 用户管理端编辑,新增书籍
+     */
+    @RequestMapping("/updatePay")
+    @ResponseBody
+    public String updatePay(@RequestBody UpdatePayModel updatePayModel){
+        log.info("入参打印---->"+ JSON.toJSON(updatePayModel));
+        if(StringUtils.isBlank(updatePayModel.getId())){
+            return "编号不允许为空,请输入后重新提交！";
+        }
+        Integer rows = userService.updatePay(updatePayModel);
+        if(rows == null){
+            return "该编号无法找到,请重新输入！";
+        }
+        if(rows == 0){
+            return "当前状态不能发货！";
+        }
+        return "发货成功！";
+
     }
 
 

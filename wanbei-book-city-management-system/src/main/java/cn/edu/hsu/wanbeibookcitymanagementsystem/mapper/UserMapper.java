@@ -22,7 +22,7 @@ public interface UserMapper extends Mapper<UserDO> {
     @Select({
             "<script>",
             "SELECT" ,
-            "b.book_id,t.username,b.`status`,b.courier_name,b.courier_number,b.is_delete" ,
+            "b.book_id,t.username,b.`status`,b.courier_name,b.courier_number,b.is_delete,b.id" ,
             "FROM" ,
             "buy_book b" ,
             "LEFT JOIN t_user t ON b.user_id = t.user_id" ,
@@ -34,11 +34,12 @@ public interface UserMapper extends Mapper<UserDO> {
             "</script>"
     })
     @Results({
+            @Result(column = "id", property = "id"),
             @Result(column = "book_id", property = "bookId"),
             @Result(column = "username", property = "username"),
             @Result(column = "status", property = "status"),
             @Result(column = "courier_name", property = "courierName"),
-            @Result(column = "courier_number", property = "courier_number"),
+            @Result(column = "courier_number", property = "courierNumber"),
     })
     List<PayModel> showAdPay(@Param("search") String search);
 }

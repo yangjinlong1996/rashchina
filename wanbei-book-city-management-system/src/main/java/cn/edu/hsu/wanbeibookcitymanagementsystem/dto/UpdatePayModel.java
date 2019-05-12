@@ -5,17 +5,19 @@ import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
 @Data
-public class PayModel {
-
+public class UpdatePayModel {
+    /**
+     * 用户id
+     */
     private String id;
 
-    private String bookId;
-
-    private String username;
-
-    private Integer status;
-
+    /**
+     * 快递名
+     */
     private String courierName;
 
+    /**
+     * 快递单号
+     */
     private String courierNumber;
 }

@@ -15,6 +15,8 @@ import java.util.List;
  */
 public interface UserService {
 
+    Integer updatePay(UpdatePayModel updatePayModel);
+
     /**
      * 根据用户名和密码完成用户登录
      * 根据秘钥验证
