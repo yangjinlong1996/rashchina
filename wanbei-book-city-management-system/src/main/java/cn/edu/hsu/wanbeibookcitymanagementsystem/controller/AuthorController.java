@@ -64,7 +64,7 @@ public class AuthorController {
     }
 
     /**
-     * 开发人员端展示用户信息
+     * 开发人员端修改用户信息
      */
     @RequestMapping("/deleteUserAu")
     @ResponseBody

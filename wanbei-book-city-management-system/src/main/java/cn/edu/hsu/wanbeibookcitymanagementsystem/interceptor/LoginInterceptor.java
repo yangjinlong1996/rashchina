@@ -6,6 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
@@ -47,7 +48,7 @@ public class LoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-
+        JOptionPane.showMessageDialog(null,"您还未登录，请登录","未登录", JOptionPane.ERROR_MESSAGE);
     }
 
     /**
@@ -60,6 +61,6 @@ public class LoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-
+        JOptionPane.showMessageDialog(null,"您还未登录，请登录","未登录", JOptionPane.ERROR_MESSAGE);
     }
 }

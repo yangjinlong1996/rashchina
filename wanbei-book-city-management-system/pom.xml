@@ -10,7 +10,7 @@
     </parent>
     <groupId>cn.edu.hsu</groupId>
     <artifactId>wanbei-book-city-management-system</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.9</version>
     <packaging>jar</packaging>
     <name>wanbei-book-city-management-system</name>
     <description>Demo project for Spring Boot</description>

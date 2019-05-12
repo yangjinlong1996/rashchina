@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.*;
+
 import static cn.edu.hsu.wanbeibookcitymanagementsystem.dao.UserDO.FINAL_PASSWORD;
 import static cn.edu.hsu.wanbeibookcitymanagementsystem.dao.UserDO.FINAL_USERNAME;
 

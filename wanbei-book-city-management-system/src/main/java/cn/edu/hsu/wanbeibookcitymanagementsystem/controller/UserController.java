@@ -307,7 +307,8 @@ public class UserController {
         String bookId = request.getParameter("bookId");
         BookDO bookDO = bookMapper.selectOne(new BookDO().setId(Integer.parseInt(bookId)).setIsDelete(0));
         String username = request.getSession().getAttribute("loginName").toString();
-        Integer count = likeBookMapper.selectCount(new LikeBookDO().setIsDelete(0).setBookName(bookDO.getBookName()).setBookId(Integer.parseInt(bookId)));
+        Integer count = likeBookMapper.selectCount(new LikeBookDO().setIsDelete(0)
+                .setBookName(bookDO.getBookName()).setUsername(username).setBookId(Integer.parseInt(bookId)));
         if(count != 0){
             message = "您的书架中已有该书籍,无须再次加入！";
         }else{
